@@ -1,8 +1,8 @@
 node_modules/
-dist/
 *.log
 .DS_Store
 .env
 .env.local
 *.tsbuildinfo
+# Note: dist/ is included in repo for GitHub dependency installation
 
