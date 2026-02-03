@@ -17,15 +17,21 @@ export declare const loginSchema: z.ZodObject<{
  */
 export type LoginDTO = z.infer<typeof loginSchema>;
 /**
- * Auth response type
+ * Auth response type (matches backend response)
  */
 export interface AuthResponse {
+    accessToken: string;
     user: {
         id: string;
         email: string;
-        name: string;
-        role: string;
+        firstName: string;
+        lastName: string;
+        phone?: string;
+        profilePictureUrl?: string;
+        status: string;
+        hasClientProfile: boolean;
+        hasProfessionalProfile: boolean;
+        isAdmin: boolean;
     };
-    token: string;
 }
 //# sourceMappingURL=auth.schema.d.ts.map

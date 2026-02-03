@@ -68,3 +68,4 @@ This package is installed directly from GitHub, so after making changes:
 2. Commit and push: `git push origin main`
 3. Other repos can update with: `npm install @specialist/shared`
 
+
