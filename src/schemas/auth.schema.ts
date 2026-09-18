@@ -28,6 +28,7 @@ export interface AuthResponse {
     status: string
     hasClientProfile: boolean
     hasProfessionalProfile: boolean
+    hasCompanyProfile: boolean
     isAdmin: boolean
   }
 }

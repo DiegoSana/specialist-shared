@@ -19,8 +19,16 @@ export const AdminContract = {
             path: '/admin/users/:id',
         },
         updateStatus: {
-            method: 'PATCH',
+            method: 'PUT',
             path: '/admin/users/:id/status',
+        },
+        updateVerification: {
+            method: 'PUT',
+            path: '/admin/users/:id/verification',
+        },
+        updateWhatsAppOptOut: {
+            method: 'PUT',
+            path: '/admin/users/:id/whatsapp-opt-out',
         },
     },
     requests: {
@@ -42,6 +50,10 @@ export const AdminContract = {
             method: 'GET',
             path: '/admin/professionals/:id',
         },
+        updateStatus: {
+            method: 'PUT',
+            path: '/admin/professionals/:id/status',
+        },
     },
     companies: {
         list: {
@@ -52,19 +64,24 @@ export const AdminContract = {
             method: 'GET',
             path: '/admin/companies/:id',
         },
+        updateStatus: {
+            method: 'PUT',
+            path: '/admin/companies/:id/status',
+        },
     },
+    // Review moderation lives under /reviews (ReviewsController), not /admin.
     reviews: {
         pending: {
             method: 'GET',
-            path: '/admin/reviews/pending',
+            path: '/reviews/admin/pending',
         },
         approve: {
             method: 'POST',
-            path: '/admin/reviews/:id/approve',
+            path: '/reviews/:id/approve',
         },
         reject: {
             method: 'POST',
-            path: '/admin/reviews/:id/reject',
+            path: '/reviews/:id/reject',
         },
     },
     notifications: {
@@ -75,6 +92,14 @@ export const AdminContract = {
         stats: {
             method: 'GET',
             path: '/admin/notifications/stats',
+        },
+        emailStatus: {
+            method: 'GET',
+            path: '/admin/notifications/email-status',
+        },
+        get: {
+            method: 'GET',
+            path: '/admin/notifications/:id',
         },
         resend: {
             method: 'POST',

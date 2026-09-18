@@ -1,5 +1,16 @@
 /**
- * User role enum
+ * User status (mirrors the backend `UserStatus` enum)
+ */
+export var UserStatus;
+(function (UserStatus) {
+    UserStatus["PENDING"] = "PENDING";
+    UserStatus["ACTIVE"] = "ACTIVE";
+    UserStatus["SUSPENDED"] = "SUSPENDED";
+    UserStatus["BANNED"] = "BANNED";
+})(UserStatus || (UserStatus = {}));
+/**
+ * @deprecated The backend has no single user role; use the `has*Profile` flags and
+ * `isAdmin` on `User` instead. Kept only so existing imports keep compiling.
  */
 export var UserRole;
 (function (UserRole) {
@@ -8,13 +19,4 @@ export var UserRole;
     UserRole["PROFESSIONAL"] = "PROFESSIONAL";
     UserRole["COMPANY"] = "COMPANY";
 })(UserRole || (UserRole = {}));
-/**
- * User status
- */
-export var UserStatus;
-(function (UserStatus) {
-    UserStatus["ACTIVE"] = "ACTIVE";
-    UserStatus["INACTIVE"] = "INACTIVE";
-    UserStatus["SUSPENDED"] = "SUSPENDED";
-})(UserStatus || (UserStatus = {}));
 //# sourceMappingURL=user.js.map
