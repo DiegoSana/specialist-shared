@@ -19,8 +19,16 @@ export declare const AdminContract: {
             readonly path: "/admin/users/:id";
         };
         readonly updateStatus: {
-            readonly method: "PATCH";
+            readonly method: "PUT";
             readonly path: "/admin/users/:id/status";
+        };
+        readonly updateVerification: {
+            readonly method: "PUT";
+            readonly path: "/admin/users/:id/verification";
+        };
+        readonly updateWhatsAppOptOut: {
+            readonly method: "PUT";
+            readonly path: "/admin/users/:id/whatsapp-opt-out";
         };
     };
     readonly requests: {
@@ -42,6 +50,10 @@ export declare const AdminContract: {
             readonly method: "GET";
             readonly path: "/admin/professionals/:id";
         };
+        readonly updateStatus: {
+            readonly method: "PUT";
+            readonly path: "/admin/professionals/:id/status";
+        };
     };
     readonly companies: {
         readonly list: {
@@ -52,19 +64,23 @@ export declare const AdminContract: {
             readonly method: "GET";
             readonly path: "/admin/companies/:id";
         };
+        readonly updateStatus: {
+            readonly method: "PUT";
+            readonly path: "/admin/companies/:id/status";
+        };
     };
     readonly reviews: {
         readonly pending: {
             readonly method: "GET";
-            readonly path: "/admin/reviews/pending";
+            readonly path: "/reviews/admin/pending";
         };
         readonly approve: {
             readonly method: "POST";
-            readonly path: "/admin/reviews/:id/approve";
+            readonly path: "/reviews/:id/approve";
         };
         readonly reject: {
             readonly method: "POST";
-            readonly path: "/admin/reviews/:id/reject";
+            readonly path: "/reviews/:id/reject";
         };
     };
     readonly notifications: {
@@ -75,6 +91,14 @@ export declare const AdminContract: {
         readonly stats: {
             readonly method: "GET";
             readonly path: "/admin/notifications/stats";
+        };
+        readonly emailStatus: {
+            readonly method: "GET";
+            readonly path: "/admin/notifications/email-status";
+        };
+        readonly get: {
+            readonly method: "GET";
+            readonly path: "/admin/notifications/:id";
         };
         readonly resend: {
             readonly method: "POST";

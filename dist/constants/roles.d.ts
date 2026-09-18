@@ -1,5 +1,6 @@
 /**
- * User roles constants
+ * @deprecated The backend has no single user role; use the `has*Profile` flags and
+ * `isAdmin` on `User` instead. Kept only so existing imports keep compiling.
  */
 export declare const USER_ROLES: {
     readonly USER: "USER";
@@ -8,12 +9,13 @@ export declare const USER_ROLES: {
     readonly COMPANY: "COMPANY";
 };
 /**
- * User status constants
+ * User status constants (mirrors the backend `UserStatus` enum)
  */
 export declare const USER_STATUS: {
+    readonly PENDING: "PENDING";
     readonly ACTIVE: "ACTIVE";
-    readonly INACTIVE: "INACTIVE";
     readonly SUSPENDED: "SUSPENDED";
+    readonly BANNED: "BANNED";
 };
 /**
  * Request status constants
