@@ -69,7 +69,9 @@ export const AdminContract = {
             path: '/admin/companies/:id/status',
         },
     },
-    // Review moderation lives under /reviews (ReviewsController), not /admin.
+    // Review moderation lives under /reviews (ReviewsController), not /admin. Responses use the
+    // `Review` type in `types/review.ts` (bidirectional reviews redesign, 2026-09-30) — `pending`
+    // now returns reviews of both `direction`s (CLIENT_TO_PROVIDER and PROVIDER_TO_CLIENT).
     reviews: {
         pending: {
             method: 'GET',
@@ -82,6 +84,12 @@ export const AdminContract = {
         reject: {
             method: 'POST',
             path: '/reviews/:id/reject',
+        },
+        // New: toggle the isFeatured flag on an APPROVED review (curated comments, not algorithmic).
+        // Body: `ReviewFeatureInput` (`{ isFeatured: boolean }`).
+        feature: {
+            method: 'POST',
+            path: '/reviews/:id/feature',
         },
     },
     notifications: {

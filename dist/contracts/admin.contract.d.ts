@@ -82,6 +82,10 @@ export declare const AdminContract: {
             readonly method: "POST";
             readonly path: "/reviews/:id/reject";
         };
+        readonly feature: {
+            readonly method: "POST";
+            readonly path: "/reviews/:id/feature";
+        };
     };
     readonly notifications: {
         readonly list: {
